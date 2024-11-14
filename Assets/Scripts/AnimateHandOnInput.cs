@@ -3,12 +3,15 @@ using UnityEngine.InputSystem;
 
 namespace MyVrSample
 {
+    /// <summary>
+    /// 컨트롤러 손 모델 애니메이션 구현
+    /// </summary>
     public class AnimateHandOnInput : MonoBehaviour
     {
         #region Variables
         private Animator handAnimator;
 
-        //��ǲ �Է°� ó��
+        //인풋 입력값 처리
         public InputActionProperty pinchAnimationAction;
         public InputActionProperty gripAnimationAction;
         #endregion
@@ -16,12 +19,12 @@ namespace MyVrSample
         // Start is called before the first frame update
         void Start()
         {
-            //����
+            //참조
             handAnimator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
+        // Update is called once per frame 
+        void Update() 
         {
             float triggerValue = pinchAnimationAction.action.ReadValue<float>();
             float gripValue = gripAnimationAction.action.ReadValue<float>();
