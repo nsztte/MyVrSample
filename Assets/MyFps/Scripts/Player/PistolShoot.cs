@@ -36,14 +36,14 @@ namespace MyFps
         // Update is called once per frame
         void Update()
         {
-            ////슛
-            //if(Input.GetButtonDown("Fire") && !isFire)
-            //{
-            //    if(PlayerStats.Instance.UseAmmo(1) == true)
-            //    {
-            //        StartCoroutine(Shoot());
-            //    }                
-            //}
+            //슛
+            /*if(Input.GetButtonDown("Fire") && !isFire)
+            {
+                if(PlayerStats.Instance.UseAmmo(1) == true)
+                {
+                    StartCoroutine(Shoot());
+                }                
+            }*/
         }
 
         IEnumerator Shoot()

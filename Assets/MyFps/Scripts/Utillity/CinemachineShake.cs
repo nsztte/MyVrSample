@@ -51,7 +51,7 @@ public class CinemachineShake : Singleton<CinemachineShake>
 
         yield return new WaitForSeconds(shakeTime);
 
-        channelPerlin.FrequencyGain = 0f;
+        channelPerlin.AmplitudeGain = 0f;
         channelPerlin.FrequencyGain = 0f;
 
         isShake = false;

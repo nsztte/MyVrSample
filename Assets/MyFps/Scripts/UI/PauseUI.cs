@@ -22,11 +22,11 @@ namespace MyFps
 
         private void Update()
         {
-            //
-            //if (Input.GetKeyDown(KeyCode.Escape))
-            //{
-            //    Toggle();
-            //}
+            /*//
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Toggle();
+            }*/
         }
 
         public void Toggle()

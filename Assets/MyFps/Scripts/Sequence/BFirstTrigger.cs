@@ -9,7 +9,7 @@ namespace MyFps
     public class BFirstTrigger : MonoBehaviour
     {
         #region Variables
-        public GameObject thePlayer;
+        public GameObject locomotion;
         public GameObject theArrow;
 
         //sequence UI
@@ -29,7 +29,8 @@ namespace MyFps
         IEnumerator PlaySequence()
         {
             //플레이 캐릭터 비활성화(플레이 멈춤)
-            thePlayer.GetComponent<FirstPersonController>().enabled = false;
+            //thePlayer.GetComponent<FirstPersonController>().enabled = false;
+            locomotion.SetActive(false);
 
             //대사 출력: "Looks like a weapon on that table.", 음성 출력
             textBox.gameObject.SetActive(true);
@@ -38,7 +39,7 @@ namespace MyFps
 
             //1초 딜레이
             yield return new WaitForSeconds(2f);
-
+            
             //화살표 활성화
             theArrow.SetActive(true);
 
@@ -50,7 +51,7 @@ namespace MyFps
             textBox.gameObject.SetActive(false);
 
             //플레이 캐릭터 활성화(다시 플레이)
-            thePlayer.GetComponent<FirstPersonController>().enabled = true;
+            locomotion.SetActive(true);
 
             //트리거 충돌체 비활성화 - 킬
             Destroy(gameObject);

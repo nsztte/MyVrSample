@@ -8,7 +8,7 @@ namespace MyFps
     {
         #region Variables
         public SceneFader fader;
-        [SerializeField] private string loadToScene = "GameOver";
+        //[SerializeField] private string loadToScene = "GameOver";
 
         //체력
         [SerializeField] private float maxHealth = 20;
@@ -22,8 +22,8 @@ namespace MyFps
         public AudioSource hurt02;          //데미지 사운드2
         public AudioSource hurt03;          //데미지 사운드2
 
-        //무기
-        public GameObject realPistol;
+        ////무기
+        //public GameObject realPistol;
         #endregion
 
         private void Start()
@@ -31,11 +31,11 @@ namespace MyFps
             //초기화
             currentHealth = maxHealth;
 
-            //무기획득
-            if(PlayerStats.Instance.HasGun)
-            {
-                realPistol.SetActive(true);
-            }
+            ////무기획득
+            //if(PlayerStats.Instance.HasGun)
+            //{
+            //    realPistol.SetActive(true);
+            //}
         }
 
         public void TakeDamage(float damage)
@@ -54,14 +54,14 @@ namespace MyFps
 
         void Die()
         {
-            //Debug.Log("GameOver!!!");
-            fader.FadeTo(loadToScene);
+            Debug.Log("GameOver!!!");
+            //fader.FadeTo(loadToScene);
         }
 
         IEnumerator DamageEffect()
         {
             damageFlash.SetActive(true);
-            CinemachineShake.Instance.ShakeCamera(1f, 1f);
+            //CinemachineShake.Instance.ShakeCamera(1f, 1f);
 
             int randNumber = Random.Range(1, 4);
             if(randNumber == 1)

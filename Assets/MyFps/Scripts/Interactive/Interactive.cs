@@ -33,13 +33,13 @@ namespace MyFps
             {
                 ShowActionUI();
 
-                //if (Input.GetButtonDown("Action"))
-                //{
-                //    HideActionUI();
+                /*if (Input.GetButtonDown("Action"))
+                {
+                    HideActionUI();
 
-                //    //Action
-                //    DoAction();
-                //}
+                    //Action
+                    DoAction();
+                }*/
             }
             else
             {

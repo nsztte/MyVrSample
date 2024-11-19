@@ -9,7 +9,8 @@ namespace MyFps
     public class AOpening : MonoBehaviour
     {
         #region Variables
-        public GameObject thePlayer;
+        public GameObject locomotion;
+
         public SceneFader fader;
 
         //sequence UI
@@ -37,10 +38,13 @@ namespace MyFps
         IEnumerator PlaySequence()
         {
             //0.플레이 캐릭터 비 활성화
-            thePlayer.GetComponent<FirstPersonController>().enabled = false;
+            locomotion.SetActive(false);
 
             //1.페이드인 연출(4초 대기후 페인드인 효과)            
             fader.FromFade(4f); //5초동안 페이드 효과
+
+            //yield return new WaitForSeconds(5f);
+
 
             //2.화면 하단에 시나리오 텍스트 화면 출력(3초), 음성 출력
             //(...Where am I?)
@@ -48,7 +52,6 @@ namespace MyFps
             textBox.text = sequence01;
             line01.Play();
 
-            yield return new WaitForSeconds(3f);
             //(I need get out of here)
             textBox.text = sequence02;
             line02.Play();
@@ -59,7 +62,7 @@ namespace MyFps
             textBox.gameObject.SetActive(false);
 
             //4.플레이 캐릭터 활성화
-            thePlayer.GetComponent<FirstPersonController>().enabled = true;
+            locomotion.SetActive(true);
         }
 
     }
