@@ -1,22 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
 namespace MyFps
 {
-    public class AmmoUI : MonoBehaviour
+    public class AmmoUI : WorldMenu
     {
         #region Variables
-        public GameObject ammoUI;
+        [SerializeField] private float showDelay = 2f;
         #endregion
 
-        // Start is called before the first frame update
-        void Start()
+        //AmmoUI 보여주고 2초후에 사라진다
+        public void ShowAmmoUI()
         {
-            ShowAmmoUI();
+            StartCoroutine(ShowUI());
         }
 
-        private void ShowAmmoUI()
+        IEnumerator ShowUI()
         {
-            ammoUI.SetActive(PlayerStats.Instance.HasGun);
+            ShowMenuUI(PlayerStats.Instance.AmmoCount.ToString());
+
+            yield return new WaitForSeconds(showDelay);
+
+            HideMenuUI();
         }
     }
 }

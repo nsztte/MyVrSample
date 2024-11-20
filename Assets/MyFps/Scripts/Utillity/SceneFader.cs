@@ -43,6 +43,9 @@ namespace MyFps
                 image.color = new Color(0f, 0f, 0f, a);
                 yield return 0f;    
             }
+
+            //다음씬 로드
+            
         }
 
         public void FadeTo(string sceneName)
@@ -86,7 +89,10 @@ namespace MyFps
             }
 
             //다음씬 로드
-            SceneManager.LoadScene(sceneNumber);
+            if(sceneNumber > 0)
+            {
+                SceneManager.LoadScene(sceneNumber);
+            }
         }
 
     }
